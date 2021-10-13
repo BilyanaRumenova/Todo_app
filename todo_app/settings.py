@@ -31,7 +31,15 @@ INSTALLED_APPS = [
     'todo_app.todo_api',
 
     'rest_framework',
+    'rest_framework.authtoken',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -83,18 +91,18 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.accounts.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.accounts.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.accounts.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.accounts.password_validation.NumericPasswordValidator',
-    },
+    # {
+    #     'NAME': 'django.contrib.accounts.password_validation.UserAttributeSimilarityValidator',
+    # },
+    # {
+    #     'NAME': 'django.contrib.accounts.password_validation.MinimumLengthValidator',
+    # },
+    # {
+    #     'NAME': 'django.contrib.accounts.password_validation.CommonPasswordValidator',
+    # },
+    # {
+    #     'NAME': 'django.contrib.accounts.password_validation.NumericPasswordValidator',
+    # },
 ]
 
 
